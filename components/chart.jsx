@@ -1,16 +1,68 @@
 import { Chart } from 'react-google-charts'
 
-
-
+import { Title } from '../styled/chartStyled'
+import { useRef, useEffect, useState } from 'react'
 
 
 export default function Gantt(props) {
 
+
+    const chartRef = useRef(null);
+    const [data, setData] = useState({ height: 0, width: 0 });
+
+
+
+
+
+
+    function resizeListener() {
+
+        let temp = {
+            width: chartRef.current.offsetWidth,
+            height: chartRef.current.offsetHeight
+        };
+
+
+        setData(temp)
+
+        console.log(temp)
+
+    }
+
+
+    useEffect(() => {
+
+        let temp = {
+            width: chartRef.current.offsetWidth,
+            height: chartRef.current.offsetHeight
+        };
+
+
+        setData(temp)
+
+
+        window.addEventListener('resize', resizeListener);
+
+
+        console.log(temp)
+
+    }, [])
+
+
+
+
+
+    // window.on('resize', () => {
+
+    //     console.log('Resizing')
+    // })
+
     return (
-        <div className="chart-div" >
+        <div className="chart-div" ref={chartRef} >
             <Chart
+                style={{ backgroundColor: "grey", }}
                 width={'100%'}
-                height={'400px'}
+                height={data.height}
                 chartType="Gantt"
                 loader={<div>Loading Chart</div>}
                 data={[
@@ -50,7 +102,35 @@ export default function Gantt(props) {
                         new Date(2021, 3, 6),
                         new Date(2021, 3, 10),
                         null,
-                        0,
+                        90,
+                        null
+                    ],
+                    [
+                        'Procurement1',
+                        'Procurement1',
+                        'Yet to start',
+                        new Date(2021, 3, 7),
+                        new Date(2021, 3, 12),
+                        null,
+                        70,
+                        null
+                    ], [
+                        'Procurement2',
+                        'Procurement2',
+                        'Yet to start',
+                        new Date(2021, 3, 4),
+                        new Date(2021, 3, 15),
+                        null,
+                        20,
+                        null
+                    ], [
+                        'Procurement3',
+                        'Procurement3',
+                        'Yet to start',
+                        new Date(2021, 3, 11),
+                        new Date(2021, 3, 23),
+                        null,
+                        30,
                         null
                     ],
 
@@ -59,12 +139,19 @@ export default function Gantt(props) {
                 ]}
 
                 options={{
-                    height: 400,
+
+                    title: "Hello",
+                    width: data.width,
+                    height: data.height,
                     gantt: {
-                        trackHeight: 30,
+                        trackHeight: 50,
                     },
+                    backgroundColor: 'red',
+                    colors: ['red', 'white', 'green']
+
                 }}
-                rootProps={{ 'data-testid': '1' }}
+
+                rootProps={{ 'data-testid': '2' }}
             />
         </div>
 
