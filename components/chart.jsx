@@ -106,8 +106,8 @@ export default function Gantt(props) {
                         null
                     ],
                     [
-                        'Procurement1',
-                        'Procurement1',
+                        'Stage1',
+                        'Stage 1',
                         'Yet to start',
                         new Date(2021, 3, 7),
                         new Date(2021, 3, 12),
@@ -115,8 +115,8 @@ export default function Gantt(props) {
                         70,
                         null
                     ], [
-                        'Procurement2',
-                        'Procurement2',
+                        'Stage2',
+                        'Stage 2',
                         'Yet to start',
                         new Date(2021, 3, 4),
                         new Date(2021, 3, 15),
@@ -124,8 +124,8 @@ export default function Gantt(props) {
                         20,
                         null
                     ], [
-                        'Procurement3',
-                        'Procurement3',
+                        'Stage3',
+                        'Stage 3',
                         'Yet to start',
                         new Date(2021, 3, 11),
                         new Date(2021, 3, 23),

@@ -20,7 +20,8 @@ const Title = styled.div`
 
 width:100%;
 display:flex;
-flex-direction:row;
+flex-direction:column;
+
 justify-content:center;
 align-items:center;
 
@@ -28,10 +29,24 @@ align-items:center;
 h1{
     text-align:center;
     color:#e6e8eb;
-    font-weight:600;
-    font-size:28px;
+    font-weight:400;
+    font-size:26px;
+
 }
 
+
+p{ 
+    text-align:center;
+    color:rgb(214,59,59);
+    font-family:Helvetica;
+    font-weight:200;
+    font-size:16px;
+    margin-top:0px;
+    margin-bottom:30px;
+    letter-spacing:1px;
+
+
+}
 `
 
 const Page = styled.div`

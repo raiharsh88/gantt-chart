@@ -23,7 +23,10 @@ export default function Home() {
 
       <Title>
 
-        <h1>One month Gantt chart</h1>
+        <h1>One month gantt chart</h1>
+
+
+        <p>Sample company data</p>
       </Title>
 
 
