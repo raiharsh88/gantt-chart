@@ -52,10 +52,7 @@ export default function Gantt(props) {
 
 
 
-    // window.on('resize', () => {
-
-    //     console.log('Resizing')
-    // })
+   
 
     return (
         <div className="chart-div" ref={chartRef} >
